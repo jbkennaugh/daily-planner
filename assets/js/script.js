@@ -8,8 +8,8 @@ $(function() {
 
     // function to load on startup, builds the task list and current date
     function init() {
-        // if nothing is in tasks then creates empty array in format we need
-        if(tasks === []){
+        // if nothing is in localStorage for tasks then creates empty array in format we need
+        if(!tasks){
             tasks = [
                 [9, ""],
                 [10, ""],
