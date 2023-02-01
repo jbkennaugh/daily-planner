@@ -9,7 +9,9 @@ $(function() {
     // function to load on startup, builds the task list and current date
     function init() {
         // if nothing is in localStorage for tasks then creates empty array in format we need
+        console.log(tasks)
         if(!tasks){
+            console.log("here")
             tasks = [
                 [9, ""],
                 [10, ""],
@@ -35,13 +37,13 @@ $(function() {
             else { var hour = $("<p>").addClass("hour").text(tasks[i][0]-12+"pm"); }
 
             if(tasks[i][0] < moment().hour()){
-                var taskInput = $("<textarea>").addClass("task past");
+                var taskInput = $("<textarea>").addClass("task past").val(tasks[i][1]);
             }
             else if(tasks[i][0] > moment().hour()){
-                var taskInput = $("<textarea>").addClass("task future");
+                var taskInput = $("<textarea>").addClass("task future").val(tasks[i][1]);
             }
             else {
-                var taskInput = $("<textarea>").addClass("task present");
+                var taskInput = $("<textarea>").addClass("task present").val(tasks[i][1]);
             }
 
             let saveButton = $("<button>").addClass("saveBtn");
