@@ -1,7 +1,6 @@
 let tasks = JSON.parse(localStorage.getItem('tasks'))
 // if nothing is in tasks then creates empty array in format we need
 if(tasks === []){
-    console.log("here");
     tasks = [
         [9, ""],
         [10, ""],
