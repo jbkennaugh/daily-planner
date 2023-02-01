@@ -1,11 +1,26 @@
 let container = $(".container");
 let currentDay = $("#currentDay");
 let currentDate;
+let tasks = JSON.parse(localStorage.getItem('tasks'))
 
 init();
 
 // function to load on startup, builds the task list and current date
 function init() {
+    // if nothing is in tasks then creates empty array in format we need
+    if(tasks === []){
+        tasks = [
+            [9, ""],
+            [10, ""],
+            [11, ""],
+            [12, ""],
+            [13, ""],
+            [14, ""],
+            [15, ""],
+            [16, ""],
+            [17, ""]    
+        ]
+    }
     container.html("");
     currentDate = moment().format("dddd, Do of MMMM YYYY");
     currentDay.text(currentDate);
