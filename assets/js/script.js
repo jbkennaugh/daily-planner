@@ -9,9 +9,7 @@ $(function() {
     // function to load on startup, builds the task list and current date
     function init() {
         // if nothing is in localStorage for tasks then creates empty array in format we need
-        console.log(tasks)
         if(!tasks){
-            console.log("here")
             tasks = [
                 [9, ""],
                 [10, ""],
